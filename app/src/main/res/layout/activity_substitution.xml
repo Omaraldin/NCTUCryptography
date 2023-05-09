@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubstitutionActivity">
+
+    <View
+        android:id="@+id/svg1"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="-15dp"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/ic_svg_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/svg2"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:background="@drawable/ic_svg_2"
+        android:translationX="25dp"
+        android:translationY="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:translationY="-15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svg1">
+
+        <View
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/primary" />
+
+        <TextView
+            android:id="@+id/caesar_cipheer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/headland"
+            android:gravity="top"
+            android:text="Substitution Cipher"
+            android:textColor="@color/primary"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/headland"
+                android:gravity="top"
+                android:text="Text:"
+                android:textColor="@color/primary"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/key"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_rect"
+                android:backgroundTint="#FFD9D9D9"
+                android:digits="abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="26"
+                android:padding="5dp"
+                android:textColor="@color/primary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_rect"
+            android:backgroundTint="#FFD9D9D9"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textColor="@color/primary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/encrypt"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_rect"
+                android:fontFamily="@font/headland"
+                android:text="Encrypt"
+                android:textAllCaps="false"
+                app:elevation="0dp" />
+
+            <Button
+                android:id="@+id/decrypt"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_rect"
+                android:fontFamily="@font/headland"
+                android:text="Decrypt"
+                android:textAllCaps="false"
+                app:elevation="0dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/frequency_analysis"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_rect"
+            android:fontFamily="@font/headland"
+            android:text="Frequency Analysis"
+            android:textAllCaps="false"
+            app:elevation="0dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/result_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/headland"
+                    android:text="Result:"
+                    android:textColor="@color/primary"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
